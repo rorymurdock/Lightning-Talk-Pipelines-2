@@ -10,6 +10,7 @@ script:
 after_success:
 - coveralls
 - python3 increment_version.py
+- git add -u
 - git commit -m "[ci skip] version changed"
 - git push
 
