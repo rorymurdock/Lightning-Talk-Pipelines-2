@@ -2,3 +2,4 @@ build/
 dist/
 lightning_talk_pipelines.egg-info/
 *.pyc
+.coverage

@@ -9,6 +9,9 @@ script:
 - python -m pytest pipelines/ --cov=./ -v
 after_success:
 - coveralls
+- python3 increment_version.py
+- git commit -m "[ci skip] version changed"
+- git push
 
 # Deploy to pypi
 deploy:
