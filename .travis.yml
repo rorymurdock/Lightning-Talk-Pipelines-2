@@ -1,23 +1,21 @@
-stages:
-  - Testing
-  - Deploy to PyPI
+language: python
+python:
+- '3.5'
+- '3.6'
+
+install:
+- python -m pip install -r requirements.txt
+- python -m pip install pytest-cov coveralls
+
+script:
+- python -m pytest pipelines/ --cov=./ -v
+
+after_success:
+- coveralls
+
 jobs:
   include:
-    - stage: Testing
-      language: python
-      python:
-      - '3.5'
-      - '3.6'
 
-      install:
-      - python -m pip install -r requirements.txt
-      - python -m pip install pytest-cov coveralls
-
-      script:
-      - python -m pytest pipelines/ --cov=./ -v
-
-      after_success:
-      - coveralls
 
     - stage: Deploy to PyPI
       env:
