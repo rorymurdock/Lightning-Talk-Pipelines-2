@@ -20,7 +20,7 @@ after_success:
 - python3 increment_version.py
 - git add -u
 - git commit -m "[ci skip] version changed"
-- git push --set-upstream origin master >/dev/null 2>&1
+- git push --set-upstream origin master
 
 # Deploy to pypi
 deploy:
