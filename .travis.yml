@@ -28,12 +28,9 @@ jobs:
         - git checkout master
         # - git push --set-upstream origin master
         - python3 increment_version.py
-        - git status
         - git add -u
-        - git status
         - git commit -m "[ci skip] version changed"
-        - git status
-        - git push --set-upstream origin master
+        - git push --set-upstream origin master >/dev/null 2>&1
       deploy:
         provider: pypi
         server: https://test.pypi.org/legacy/
