@@ -10,7 +10,15 @@ install:
 
 # command to run tests
 script:
-  - python -m pytest pipeline/ --cov=./ -v
+  - python -m pytest pipelines/ --cov=./ -v
 
 after_success:
   - coveralls
+
+# # Deploy to pypi
+# deploy:
+#   provider: pypi
+#   user: $pypi_user
+#   password: $pypi_password
+#   on:
+#     branch: master
