@@ -1,24 +1,21 @@
 language: python
 python:
-  - "3.5"
-  - "3.6"
-  
-# command to install dependencies
+- '3.5'
+- '3.6'
 install:
-  - python -m pip install -r requirements.txt
-  - python -m pip install pytest-cov coveralls
-
-# command to run tests
+- python -m pip install -r requirements.txt
+- python -m pip install pytest-cov coveralls
 script:
-  - python -m pytest pipelines/ --cov=./ -v
-
+- python -m pytest pipelines/ --cov=./ -v
 after_success:
-  - coveralls
+- coveralls
 
-# # Deploy to pypi
-# deploy:
-#   provider: pypi
-#   user: $pypi_user
-#   password: $pypi_password
-#   on:
-#     branch: master
+# Deploy to pypi
+deploy:
+  provider: pypi
+  server: https://testpypi.python.org/pypi
+  user: rorymurdock
+  password:
+    secure: Otf/mlZQnhw1GHcUkb1iOIw8S2KPd/dFX/CF7NjToXbjRwIrkkk8L0sAdo1PMGx0vQazNSnNek3xrxkr6NpI2F6tgR3GMBR25+lrnT8D60bD7kOUtWFWXqGRhqyfokrHpzezaU/P4Yayc1lpxLUSMxWHRqjuMXFJZjMY3T4ywDljHAGOpgqmy+BlUAycA9rARHykf/hw/GtPpgDJBRoqdH1gFIgwILXip0Arf2Kj+MN4KqMRmlqVYLX7JghXERQ7u1Uq5jdGj6EhKPl5ayPIDp7o89s71thkTeU1DLPvu5PsB3silENu0JyfnkU62yaNyMvdmvAl1CarnxiAZnNynbvW24VKR2RCxelOHWIuUrPQOgCtiuW4lh2ywqjEUGbfl6rm/GZHSKGs/5Kzkxa/Yj244R7qP/xlAgdhGRCJV+7Akr+YSN506vF+gZ/axS3p70nWWIJv56oJttGu8sv9Bb049p5b53pHtYODyr8Sc75QriG02WpD7EQlAyHV4T/Jf/Ksl6j+GnezHZl77Z4aJvw5R/zqP3Vz7GkzvbvVJNb5lu/FChojuvCOuK4xT6BRmrLf0wn24F3Y6l3V3gLjefqs9N8ewSBnXjL/8ckqlVbkbyUGh0qLV4TSe2ihaTmBIt2ThuyG6M+d8id1v4WWbn2d0gFjTnjlrxN7I4t7zCU=
+  on:
+    branch: master
