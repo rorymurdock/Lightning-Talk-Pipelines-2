@@ -22,6 +22,7 @@ jobs:
     - stage: Deploy to PyPI
       env:
         secure: "Cv1FJ+tUYBGh/0sahip8TlvIEjXmW/BpZuXjTGTzXobT6CvAvYmoNkqz1aolu2r+X1ZhyXiUX9SCCkZ/JzCY5C203XPEgwUqKQ5JPWi/d/lxueUosWaYHDHw5VJJLUDQh49cOyHO/avodsgAwo6N8wr2aHNP+PdFs9V/K7OZkYxgYy/QSI/riQychJ9It7pvWUmLN0mClME4DNthXH30Y6mkvNHyQfESrZ15arz4YqlfZoNXrn2gQN8ZHg5XcDP1ERRG3om5KV8tnnKEZQsT3Of8F+qiw/ZlpOs1aaXDJm7TZOH20MqtAEJ6I7/ngd4Z/SUGeLcVI/tDwQL5EglAxD0THaGdmEw0sMOTKAYrc/QnD3bfZRl7gOagFoq0fvpJAIVhkd0+rEwYX8YjLRgxeaCSSq4MRJyFIhwQIXn8HNqoarssfqqRc3MtuFL5juhfySrwufhlsuWrV/Eh42PiPBTh6vwp/rz1mhrf7dtl4B7jX6JPGQp1ec/WlUyVnQXJHsyRyo9u8z4yl6RWm2YraHBkJINh1jF7szfdA3CG+agDQllSoOMRxpdKB0spw+KwT0GvRikoGaxMcyBpcjQQtr9kTeicV+JsbtVGNk796MDMpCXscupnfmSMwLz7WkXfUEft04GGUMIJu++SrOXImqqMlGR0fc+YgQHHianVUgM="
+      language: python
       python: 3.6
       script:
         - git remote rm origin
